@@ -9,11 +9,13 @@ By combining two large-scale open datasets, this study seeks to reveal patterns 
 Source: Uncover Global Trends in Mental Health Disorder – Kaggle
 Contains data on global mental health disorder prevalence rates across multiple years.
 Includes variables such as country, disorder type, percentage affected, and year.
+https://www.kaggle.com/datasets/thedevastator/uncover-global-trends-in-mental-health-disorder
 
 (b) Economic Inequality Dataset
 Source: Global Economic Inequality – Kaggle
 Provides global income and wealth inequality indicators.
 Features include Gini coefficient, top 10% income share, GDP per capita, and region.
+https://www.kaggle.com/datasets/mathurinache/global-economic-inequality
 
 (c) Enrichment Plan
 To strengthen analysis:
