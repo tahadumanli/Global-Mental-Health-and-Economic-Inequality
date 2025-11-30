@@ -96,12 +96,14 @@ This scope was too limited to capture the influence of economic inequality.
 To address this limitation, Phase 2 enriches the dataset with two additional Kaggle sources:
 
 ### **(a) Gini Index by Country**
+https://www.kaggle.com/datasets/ulrikthygepedersen/gini-index-per-country
 
 A dataset measuring income inequality
 
 -   Added variable: `gini_index`
 
 ### **(b) Global Income Inequality (OWID)**
+https://www.kaggle.com/datasets/georgehanyfouad/global-income-inequality
 
 A dataset providing a broader set of inequality and income distribution indicators:
 
