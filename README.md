@@ -468,4 +468,11 @@ Mental health outcomes are influenced by a wide range of factors—including hea
 - The dataset does not include non-economic determinants of mental health.
 - Country-level aggregation may obscure within-country heterogeneity.
 
+## Final Conclusion
+
+This project investigated the relationship between global depression prevalence and economic inequality using a multi-stage data science pipeline. In Phase 1, publicly available mental health and economic datasets were collected, merged, and enriched to construct a comprehensive country–year level dataset. Phase 2 applied exploratory data analysis and hypothesis testing, which revealed that simple linear relationships between depression prevalence and individual economic indicators (such as GDP per capita and Gini-based inequality measures) are generally weak or statistically insignificant.
+
+In Phase 3, machine learning methods were employed to further explore these relationships from a predictive perspective. Linear and regularized regression models confirmed the limited explanatory power of economic variables in a linear setting. A non-linear Random Forest model achieved higher predictive performance, indicating that economic level, inequality, and temporal effects may interact in more complex ways. However, even this model left a substantial portion of variance unexplained.
+
+Overall, the findings suggest that while economic conditions and income inequality contribute to mental health outcomes, they are insufficient on their own to fully explain global variations in depression prevalence. Mental health is inherently multifactorial and shaped by a broader set of influences, including healthcare access, social support systems, cultural factors, and public policy. This project highlights both the value and the limitations of economic indicators in mental health research and underscores the importance of integrating non-economic determinants in future data-driven studies.
 
