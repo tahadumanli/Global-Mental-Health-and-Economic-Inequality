@@ -165,11 +165,15 @@ Multiple visual analyses were performed:
 
 #### **a) GDP vs Depression**
 
+- This plot shows a generally negative trend between GDP per capita and depression rates, indicating that wealthier countries tend to have lower levels of depression. However, the dispersion of points implies that economic prosperity does not guarantee better mental health outcomes.
+
 -   Displays a very weak positive trend
 
 -   Higher wealth does not correspond to lower depression
 
 #### **b) Gini Index vs Depression**
+
+-  The scatter plot illustrates the relationship between income inequality (measured by the Gini Index) and depression prevalence across countries. While there is a visible upward tendency—suggesting that countries with higher income inequality tend to have higher depression rates—the relationship is not strictly linear. The spread of points indicates substantial variability, meaning that income inequality alone does not fully explain depression prevalence.
 
 -   Both Gini datasets show no strong patterns
 
@@ -178,6 +182,8 @@ Multiple visual analyses were performed:
 -   No visible linear relationship
 
 #### **c) Income Share vs Depression**
+
+-  The visualization suggests that countries where income is more concentrated within a smaller group tend to exhibit higher depression rates. Although the relationship is not perfectly linear, the overall trend indicates that unequal income distribution is associated with worse mental health outcomes.
 
 -   Top 10% share → no relationship
 
@@ -199,8 +205,12 @@ A set of statistical tests was conducted to evaluate associations between econom
 
 ### **H1 --- Correlation Between GDP per Capita and Depression**
 
-**Test:** Pearson correlation\
-**Hypothesis:** A linear relationship may exist between GDP and depression.
+
+**Null Hypothesis (H₀):** GDP per capita has no statistically significant relationship with depression rate.
+
+**Alternative Hypothesis (H₁):** GDP per capita has a statistically significant relationship with depression rate.
+
+**Test:** Pearson correlation
 
 **Result:**
 
@@ -208,13 +218,18 @@ A set of statistical tests was conducted to evaluate associations between econom
 
 -   p ≪ 0.001
 
-**Finding:**\
-A statistically significant but very weak positive correlation.\
-Higher GDP does not meaningfully predict depression prevalence.
+**Desicion**
+Since the p-value is smaller than 0.05, we reject the null hypothesis.
 
+**Conclusion:**\
+There is a statistically significant but very weak positive relationship between GDP per capita and depression prevalence. Although higher GDP is associated with slightly higher depression rates, the effect size is minimal, indicating that GDP per capita does not meaningfully predict depression prevalence on its own.
 * * * * *
 
 ### **H2 --- Correlation Between Gini Index (Dataset 1) and Depression**
+
+**Null Hypothesis (H₀):** There is no statistically significant relationship between the Gini Index and depression prevalence.
+
+**Alternative Hypothesis (H₁):** There is a statistically significant relationship between the Gini Index and depression prevalence.
 
 **Test:** Pearson correlation
 
@@ -224,13 +239,18 @@ Higher GDP does not meaningfully predict depression prevalence.
 
 -   p ≪ 0.001
 
-**Finding:**\
-A weak negative correlation.\
-This inequality measure does not show a meaningful link to depression.
+**Decision:** Since the p-value is less than 0.05, we reject the null hypothesis.
+
+**Conclusion:**\
+There is a statistically significant but weak negative relationship between the Gini Index and depression prevalence. Although the correlation is statistically significant, its small magnitude indicates that the Gini Index does not meaningfully explain variations in depression prevalence on its own.
 
 * * * * *
 
 ### **H3 --- Correlation Between OWID Gini Index and Depression**
+
+**Null Hypothesis (H₀):** There is no statistically significant relationship between the OWID Gini Index and depression prevalence.
+
+**Alternative Hypothesis (H₁):** There is a statistically significant relationship between the OWID Gini Index and depression prevalence.
 
 **Test:** Pearson correlation
 
@@ -240,13 +260,17 @@ This inequality measure does not show a meaningful link to depression.
 
 -   p ≈ 0.91
 
-**Finding:**\
-No correlation.\
-This version of the Gini index shows no measurable relationship with depression.
+**Decision:** Since the p-value is greater than 0.05, we fail to reject the null hypothesis.
 
+**Conclusion:**\
+There is no statistically significant relationship between the OWID Gini Index and depression prevalence. The near-zero correlation coefficient indicates that this measure of income inequality does not capture any meaningful association with depression rates in the analyzed data.
 * * * * *
 
 ### **H4 --- Correlation Between Income Distribution Metrics and Depression**
+
+**Null Hypothesis (H₀):** There is no statistically significant relationship between income distribution metrics (top 10% income share, bottom 10% income share, and average income) and depression prevalence.
+
+**Alternative Hypothesis (H₁):** At least one income distribution metric has a statistically significant relationship with depression prevalence.
 
 **Metrics Tested:**
 
@@ -262,12 +286,19 @@ This version of the Gini index shows no measurable relationship with depression.
 
 -   p-values high
 
-**Finding:**\
-Income distribution metrics show no significant relationship with depression rates.
+**Decision:** Since all p-values are greater than 0.05, we fail to reject the null hypothesis.
+
+
+**Conclusion:**\
+Income distribution metrics, including top and bottom income shares and average income, do not show a statistically significant relationship with depression prevalence. The very small correlation coefficients indicate that these variables do not meaningfully explain variations in depression rates across countries.
 
 * * * * *
 
 ### **H5 --- Mean Difference Between Low- and High-Inequality Countries**
+
+**Null Hypothesis (H₀):** There is no difference in mean depression prevalence between low-inequality and high-inequality countries.
+
+**Alternative Hypothesis (H₁):** There is a statistically significant difference in mean depression prevalence between low-inequality and high-inequality countries.
 
 **Dataset:** OWID Gini\
 **Test:** Two-sample t-test
@@ -280,9 +311,10 @@ Income distribution metrics show no significant relationship with depression rat
 
 -   Means nearly identical
 
-**Finding:**\
-Low-inequality and high-inequality countries have the same average depression rates.\
-No group-level differences were detected.
+**Decision:** Since the p-value is greater than 0.05, we fail to reject the null hypothesis.
+
+**Conclusion:**\
+There is no statistically significant difference in average depression rates between low-inequality and high-inequality countries. The nearly identical group means and extremely small t-statistic indicate that inequality level, as measured here, does not lead to detectable group-level differences in depression prevalence.
 
 * * * * *
 
