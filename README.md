@@ -364,3 +364,108 @@ Phase 2 shows that:
 -   Mental health variation cannot be understood using economic data alone.
 
 Phase 3 will investigate whether multivariate and non-linear models capture deeper patterns.
+
+**Phase 3: Machine Learning Analysis**
+=======================================================================
+
+### Objective
+The objective of Phase 3 is to apply machine learning methods to evaluate whether economic and income inequality indicators can predict depression prevalence across countries, and to assess whether non-linear models provide additional explanatory power beyond traditional statistical analyses conducted in Phase 2.
+
+---
+
+### Dataset Description
+The machine learning analysis is based on the previously constructed merged dataset (`mental_econ_inequality_full.csv`), which combines global depression prevalence data with economic and inequality indicators across country–year observations.
+
+Due to substantial missingness in several income distribution variables (e.g., OWID Gini index, income share metrics), the primary machine learning analysis focuses on variables with sufficient coverage to ensure methodological validity.
+
+**Final dataset used for ML:**
+- Number of observations: **1,390**
+- Target variable:
+  - `depression_rate`
+- Feature variables:
+  - `gdp_per_capita`
+  - `gini_index`
+  - `year`
+
+Rows containing missing values in these variables were removed. No imputation was performed in order to avoid introducing artificial information.
+
+---
+
+### Problem Formulation
+The task is formulated as a **regression problem**, where the goal is to predict depression prevalence based on economic and inequality-related features.
+
+---
+
+### Models Applied
+The following models were implemented:
+
+1. **Linear Regression**  
+   Used as a baseline model to evaluate linear relationships and provide interpretable coefficients.
+
+2. **Ridge Regression**  
+   Applied to assess robustness and address potential multicollinearity through L2 regularization.
+
+3. **Random Forest Regressor**  
+   A non-linear ensemble model used to capture complex interactions and non-linear patterns among variables.
+
+No extensive hyperparameter tuning was performed, as the focus of the analysis is interpretability and methodological comparison rather than performance optimization.
+
+---
+
+### Evaluation Metrics
+Model performance was evaluated using:
+- **R² (Coefficient of Determination)**
+- **RMSE (Root Mean Squared Error)**
+
+An 80/20 train–test split was used consistently across all models.
+
+---
+
+### Results
+
+| Model | R² | RMSE |
+|-----|----|----|
+| Linear Regression | 0.189 | 0.572 |
+| Ridge Regression | 0.189 | 0.572 |
+| Random Forest Regressor | **0.513** | **0.443** |
+
+---
+
+### Model Interpretation
+
+#### Linear and Ridge Regression
+Both linear and ridge regression models achieved low predictive performance, explaining approximately **19%** of the variance in depression prevalence. Ridge regularization did not improve performance or substantially alter coefficient values, indicating that multicollinearity is not a primary issue in the dataset.
+
+Coefficient analysis shows that:
+- `year` has the largest (negative) coefficient, suggesting a modest temporal trend.
+- `gini_index` has a very small coefficient, indicating a weak association.
+- `gdp_per_capita` has a near-zero coefficient, suggesting that economic wealth alone does not meaningfully predict depression prevalence.
+
+These findings are consistent with the weak linear relationships identified in Phase 2 hypothesis testing.
+
+---
+
+#### Random Forest Regression
+The Random Forest model achieved a higher R² of **0.51**, indicating improved predictive performance relative to linear models. Feature importance analysis shows:
+
+- GDP per capita as the most influential predictor,
+- Gini index as the second most important variable,
+- Year contributing the least.
+
+This suggests that economic variables and inequality measures may interact in **non-linear ways** that are not captured by linear models. However, despite the improvement, a substantial portion of variance remains unexplained.
+
+---
+
+### Discussion
+The machine learning results reinforce the conclusions from Phase 2. While simple linear relationships between economic indicators and depression prevalence are weak, non-linear models can partially capture complex interactions between variables. Importantly, improved predictive performance does not imply causality.
+
+Mental health outcomes are influenced by a wide range of factors—including healthcare access, cultural norms, social support systems, and policy differences—which are not included in the dataset. As such, economic indicators alone are insufficient to fully explain global variations in depression prevalence.
+
+---
+
+### Limitations
+- High missingness in several inequality-related variables limited their inclusion in the primary ML analysis.
+- The dataset does not include non-economic determinants of mental health.
+- Country-level aggregation may obscure within-country heterogeneity.
+
+
