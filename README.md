@@ -476,3 +476,7 @@ In Phase 3, machine learning methods were employed to further explore these rela
 
 Overall, the findings suggest that while economic conditions and income inequality contribute to mental health outcomes, they are insufficient on their own to fully explain global variations in depression prevalence. Mental health is inherently multifactorial and shaped by a broader set of influences, including healthcare access, social support systems, cultural factors, and public policy. This project highlights both the value and the limitations of economic indicators in mental health research and underscores the importance of integrating non-economic determinants in future data-driven studies.
 
+**Note on AI usage:**  
+Large language models were used for code debugging assistance and for improving clarity and structure of written explanations. All modeling decisions, analysis, and interpretations were made by the author.
+
+
